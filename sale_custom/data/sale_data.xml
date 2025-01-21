@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="sale_campaign_twenty_percent" model="sale.campaign">
+            <field name="name">20% Descuento</field>
+            <field name="discount_type">percentage</field>
+            <field name="discount_value">20.0</field>
+            <field name="start_date">2025-01-01</field>
+            <field name="end_date">2025-01-31</field>
+        </record>
+
+    </data>
+</odoo>

@@ -15,6 +15,7 @@
                 "sale_management"],
     "data": ["security/sale_security.xml",
              "security/ir.model.access.csv",
+             "data/sale_data.xml",
              "views/sale_campaign_views.xml"],
     "assets": {},
     "installable": True,
