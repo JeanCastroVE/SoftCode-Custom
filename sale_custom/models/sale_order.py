@@ -23,3 +23,13 @@ class SaleOrder(models.Model):
                         rec.write({"campaign_discount": (rec.amount_total - rec.sale_campaign_id.discount_value)})
             else:
                 rec.write({"campaign_discount": 0})
+
+    def action_confirm(self):
+        """ Asegurar que la fecha de la campaña se encuentre dentro de la fecha del presupuesto """
+        res = super().action_confirm()
+        if self.sale_campaign_id:
+            if self.date_order.date() <= self.sale_campaign_id.end_date and self.date_order.date() >= self.sale_campaign_id.start_date:
+                pass
+            else:
+                raise ValidationError('La Fecha del Presupuesto esta fuera del Rango de la Campaña')
+        return res
