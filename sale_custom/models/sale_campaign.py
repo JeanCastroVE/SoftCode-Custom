@@ -13,6 +13,5 @@ class SaleCampaign(models.Model):
     name = fields.Char(string="Nombre de la Campaña", required=True)
     discount_type = fields.Selection(ls_discount_type, string="Tipo de Descuento")
     discount_value = fields.Float(string="Valor de Descuento")
-    street = fields.Char(string="Dirección")
     start_date = fields.Date(string="Fecha Inicio")
     end_date = fields.Date(string="Fecha Fin")
