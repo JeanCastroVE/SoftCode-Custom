@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="view_sale_campaign_tree" model="ir.ui.view">
+        <field name="name">sale.campaign.tree</field>
+        <field name="model">sale.campaign</field>
+        <field name="arch" type="xml">
+            <tree string="Campañas de Ventas" name="sale_campaign" editable="top">
+                <field name="name"/>
+                <field name="discount_type"/>
+                <field name="discount_value"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_sale_campaign" model="ir.actions.act_window">
+        <field name="name">Campañas de Ventas</field>
+        <field name="res_model">sale.campaign</field>
+        <field name="view_mode">tree</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">Agregar un Nuevo Registro</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_sale_campaign" name="Campañas de Ventas" parent="sale.sale_menu_root" action="action_sale_campaign" sequence="45"/>
+
+</odoo>
